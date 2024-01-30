@@ -50,15 +50,6 @@ const SideBar = () => {
     setActiveTheme('dark');
   };
 
-  //set active theme to system and also update localstorage
-  const setSystem = () => {
-    if(typeof window !== undefined){
-    localStorageState.removeItem('theme');
-    }
-    setTheme('system');
-    setActiveTheme('system');
-    console.log(localStorageState.font);
-  }
 
   return (
     <aside className="py-5 flex flex-col items-center gap-5 bg-[#F7F8FA] border-r border-r-[#EBECF2] h-full">
@@ -66,7 +57,7 @@ const SideBar = () => {
         <LogoIcon />
       </Link>
 
-      <div className="flex flex-col items-center justify-center gap-1">
+      <nav className="flex flex-col items-center justify-center gap-1">
         <Link to='/' aria-label="Link to home page" className="flex items-center justify-between group">
           <button className="size-10 flex items-center justify-center mx-2.5" >
             <HomeIcon className={`${location.pathname === '/' ? 'fill-[#0D062D]' : 'fill-[#B2ABAB]'} group-hover:fill-[#0D062D] transition-all duration-200 ease-in-out`} />
@@ -107,9 +98,18 @@ const SideBar = () => {
           </button>
           <PageIdentifierIcon  className={ location.pathname === '/info' ? 'visible' : 'invisible'}/>
         </Link>
-      </div>
+      </nav>
+
+      <div role='radiogroup' className="flex gap-0 rounded-full p-1 border border-[#ebebebs] dark:border-[#2e2e2e]">
+                <button aria-checked={`${activeTheme === 'dark'? 'true' : 'false'}`} aria-label='Switch to dark theme' role='radio' onClick={setDark} className={`group rounded-full p-2  ${activeTheme === 'dark'? 'bg-[#E6E6E6] dark:bg-[#292929]' : ''}`}>
+                <RiMoonLine className={`w-3 h-3 group-hover:text-black group-hover:dark:text-white ${activeTheme === 'dark'? 'text-black dark:text-white' : 'text-black/50 dark:text-white/50'}`} />
+                </button>
+                <button aria-checked={`${activeTheme === 'light'? 'true' : 'false'}`} aria-label='Switch to light theme' role='radio' onClick={setLight} className={`group rounded-full p-2 ${activeTheme === 'light'? 'bg-[#E6E6E6] dark:bg-[#292929]' : ''}`}>
+                <RiSunLine className={`w-3 h-3 group-hover:text-black group-hover:dark:text-white ${activeTheme === 'light'? 'text-black dark:text-white' : 'text-black/50 dark:text-white/50'}`} />
+                </button>
+            </div>
     </aside>
   )
 }
 
-export default SideBar
+export default SideBar;
