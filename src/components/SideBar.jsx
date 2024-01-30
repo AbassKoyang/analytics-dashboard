@@ -1,8 +1,65 @@
 import { Link, useLocation } from "react-router-dom"
 import { ChartIcon, DiscountIcon, HomeIcon, InfoIcon, LogoIcon, PageIdentifierIcon, ProfileIcon, TrendsIcon } from "../assets/icons"
+import { useEffect, useState } from "react";
 
 const SideBar = () => {
   const location = useLocation();
+  const [localStorageState, setLocalStorageState] = useState({});
+  const [theme, setTheme] = useState('dark');
+  const [activeTheme, setActiveTheme] = useState('system');
+
+  
+// Get local storage theme,  if it is 'dark' add the dark class to the documentElement classList.
+  useEffect(() => {
+    setLocalStorageState(localStorage);
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+ 
+  }, [theme]);
+
+  //On page mount  or update, check what the current active theme should be and apply it to the state.
+  useEffect(() => {
+    if (localStorage.theme === 'dark') {
+      setActiveTheme('dark');
+    } else if(localStorage.theme === 'light') {
+      setActiveTheme('light');
+    } else if (localStorage.theme === 'system') {
+      setActiveTheme('system');
+    }
+  }, [activeTheme]);
+
+  //set active theme to light and also update localstorage
+  const setLight = () => {
+    if(typeof window !== undefined){
+    localStorageState.theme = 'light';
+    }
+    setTheme('light');
+    setActiveTheme('light');
+  }
+
+  //set active theme to dark and also update localstorage
+  const setDark = () => {
+    if(typeof window !== undefined){
+    localStorageState.setItem('theme', 'dark')
+    localStorageState.theme = 'dark';
+    }
+    setTheme('dark');
+    setActiveTheme('dark');
+  };
+
+  //set active theme to system and also update localstorage
+  const setSystem = () => {
+    if(typeof window !== undefined){
+    localStorageState.removeItem('theme');
+    }
+    setTheme('system');
+    setActiveTheme('system');
+    console.log(localStorageState.font);
+  }
+
   return (
     <aside className="py-5 flex flex-col items-center gap-5 bg-[#F7F8FA] border-r border-r-[#EBECF2] h-full">
       <Link to='/' aria-label="Logo(Link to home)" className="flex items-center justify-center">
