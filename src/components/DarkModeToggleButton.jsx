@@ -41,7 +41,7 @@ const DarkModeToggleButton = () => {
     };
 
   return (
-    <div role='radiogroup' className="flex flex-col gap-2 rounded-full p-1.5 bg-white  transition-all duration-200 ease-in-out">
+    <div role='radiogroup' className="flex flex-col gap-2 rounded-full p-1.5 bg-white dark:bg-black transition-all duration-200 ease-in-out">
         <button aria-checked={`${activeTheme === 'dark'? 'true' : 'false'}`} aria-label='Switch to dark theme' role='radio' onClick={setDark} className={`group rounded-full p-1 ${activeTheme === 'dark'? 'bg-[#34CAA5] dark:bg-[#34CAA5]' : ''} transition-all duration-200 ease-in-out`}>
         <MoonIcon className={`w-5 h-5 ${activeTheme === 'dark'? 'fill-white dark:fill-white' : 'fill-[#B2ABAB] dark:fill-white/50 group-hover:fill-[#949191] group-hover:dark:fill-[#dad5d5]'} transition-all duration-200 ease-in-out`} />
         </button>
