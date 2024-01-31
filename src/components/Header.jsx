@@ -1,3 +1,4 @@
+import { SearchIcon } from "../assets/icons"
 
 const Header = () => {
   return (
@@ -7,7 +8,7 @@ const Header = () => {
         <div className="flex items-center gap-3">
           <div className="flex gap-3">
             <div>
-              
+              <SearchIcon />
               <input type="search" />
             </div>
           </div>
