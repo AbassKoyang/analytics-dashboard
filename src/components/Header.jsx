@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CalendarIcon, SearchIcon } from "../assets/icons"
+import { CalendarIcon, NotificationIcon, SearchIcon } from "../assets/icons"
 
 const Header = () => {
   const [date, setDate] = useState('');
@@ -26,6 +26,13 @@ const Header = () => {
               <CalendarIcon />
               <p className="font-medium text-[#26282C] text-sm">{date}</p>
             </div>
+          </div>
+
+          <div className="flex">
+            <button className="p-2 bg-transparent border-[0.77px] border-[#DADDDD] rounded-full">
+              <NotificationIcon className='size-4 xl:size-[18px]'/>
+            </button>
+
           </div>
         </div>
       </div>
