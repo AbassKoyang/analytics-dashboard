@@ -5,10 +5,12 @@ const Header = () => {
       <div className="w-full max-w-[1400px] flex justify-between items-center">
         <h1 className="text-[20px] leading-7 font-semibold">Dashboard</h1>
         <div className="flex items-center gap-3">
-          <li>link</li>
-          <li>link</li>
-          <li>link</li>
-          <li>link</li>
+          <div className="flex gap-3">
+            <div>
+              
+              <input type="search" />
+            </div>
+          </div>
         </div>
       </div>
     </header>
