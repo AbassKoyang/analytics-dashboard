@@ -8,7 +8,7 @@ const SideBar = () => {
 
   return (
     <aside className="fixed top-0 left-0 py-5 flex flex-col items-center justify-between bg-[#F7F8FA] dark:bg-[#1b1b1b] border-r border-r-[#EBECF2] dark:border-r-[#A3A3A3] h-full">
-      <div className="flex flex-col gap-5 xl:gap-8 items-center">
+      <div className="flex flex-col gap-4 xl:gap-8 items-center">
       <Link to='/' aria-label="Logo(Link to home)" className="flex items-center justify-center">
         <LogoIcon className={'fill-[#34CAA5] dark:fill-[#34CAA5]'} />
       </Link>
