@@ -1,7 +1,8 @@
+import StatsCard from "../components/StatsCard"
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <StatsCard />
   )
 }
 
