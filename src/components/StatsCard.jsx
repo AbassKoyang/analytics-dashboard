@@ -9,11 +9,11 @@ const StatsCard = ({icon, graph, heading, value, percentage, percentageIcon, tex
         </span>
         <img src={graph} alt="Graph" />
         </div>
-        <h2 className="text-[#898989] font-medium text-lg mx-3">Total refund</h2>
+        <h2 className="text-[#898989] font-medium text-[16px] my-1.5">Total refund</h2>
         <h2 className="text-[#3A3F51 font-medium text-[22px]">270</h2>
-        <div className="flex items-center justify-between mt-3">
-        <span className="px-2 py-1 rounded-full text-[#ED544E] bg-[#ed534e50] text-[8px] font-medium">23,5%</span>
-        <p className="text-[#606060] text-[8px]">vs. previous month</p>
+        <div className="flex items-center justify-between mt-1.5">
+        <span className="px-2 py-1 rounded-full text-[#ED544E] bg-[#ed534e31] text-[10px] font-medium">23,5%</span>
+        <p className="text-[#606060] text-[12px]">vs. previous month</p>
         </div>
     </div>
   )
