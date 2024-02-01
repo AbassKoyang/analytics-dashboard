@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom"
 import Header from "../components/Header"
 import SideBar from "../components/SideBar"
+import TabBar from "../components/TabBar"
 
 const RootLayout = () => {
   return (
@@ -9,6 +10,7 @@ const RootLayout = () => {
         <section className='p-0 m-0 lg:pl-[53.9px] xl:pl-[63px]'>
         <Header />
         <Outlet />
+        <TabBar />
         </section>
     </main>
   )
