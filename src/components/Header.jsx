@@ -52,7 +52,7 @@ const Header = () => {
               </div>
             </button>
 
-            <button onClick={() => setIsProfilePopUpOpen(!isProfilePopUpOpen)} aria-label="Profile button, click to open profile drop-down." aria-haspopup='true' aria-expanded={isProfilePopUpOpen} className="p-1 xl:p-2 border border-[#DADDDD] rounded-3xl flex gap-3 items-center relative">
+            <button onClick={() => setIsProfilePopUpOpen(!isProfilePopUpOpen)} aria-label="Profile button, click to open profile drop-down." aria-haspopup='true' aria-expanded={isProfilePopUpOpen} className="p-1 border border-[#DADDDD] rounded-3xl xl:rounded-[40px] flex gap-3 items-center relative">
               <img src={image} alt="profile image" className="size-8 xl:size-12"/>
               <div className="hidden lg:flex flex-col">
                 <h5 className="font-normal text-sm xl:text-[16px] text-[#26282C] dark:text-white/95">Justin Bergson</h5>
