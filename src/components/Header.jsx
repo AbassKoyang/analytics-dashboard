@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { CalendarIcon, ChevronDownIcon, CloseIcon, LogoIcon, NotificationIcon, SearchIcon } from "../assets/icons";
 import image from '../assets/profile-image.png'
 import { Link } from "react-router-dom";
+import DarkModeToggleButton from "./DarkModeToggleButton";
 
 const Header = () => {
   const [date, setDate] = useState('');
@@ -59,9 +60,12 @@ const Header = () => {
                 <small className="text-[#AFAFBF] text-[10px] xl:text-[12px] dark:text-white/60">Justin@gmail.com</small>
               </div>
               <ChevronDownIcon className={`hidden lg:block fill-[#0D062D] dark:fill-white ${isProfilePopUpOpen ? 'rotate-180' : 'rotate-0'} transition-all duration-200 ease-in-out`} />
-              <div className={`${isProfilePopUpOpen ? 'flex' : 'hidden'} flex-col lg:w-full absolute -bottom-[120px] right-0 lg:left-0 rounded-xl flex-wrap bg-white dark:bg-black p-4 pb-2 text-right drop-shadow-sm`}>
-                <h5 className="font-medium text-[#26282C] dark:text-white/95 text-sm">Justin Bergson</h5>
-                <h5 className="font-medium text-[#26282C] dark:text-white/95 text-sm">justin@gmail.com</h5>
+              <div onClick={(event) => (event.stopPropagation())} className={`${isProfilePopUpOpen ? 'flex' : 'hidden'} flex-col lg:w-full absolute -bottom-[200px] lg:-bottom-[120px] right-0 lg:left-0 rounded-xl flex-wrap bg-white dark:bg-black p-4 pb-2 text-right drop-shadow-sm`}>
+                <div className="flex w-full justify-center items-center lg:hidden rotate-90">
+                  <DarkModeToggleButton />
+                </div>
+                <h5 className="font-medium text-[#26282C] dark:text-white/95 text-[12px] md:text-sm">Justin Bergson</h5>
+                <h5 className="font-medium text-[#26282C] dark:text-white/95 text-[12px] md:text-sm">justin@gmail.com</h5>
                 <button className="w-full border-t border-t-[#DADDDD] p-2 text-sm text-red-600 mt-3">
                   Logout
                 </button>
