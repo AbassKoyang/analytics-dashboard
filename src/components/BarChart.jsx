@@ -11,7 +11,7 @@ const RoundedBar = ({ x, y, width, height }) => {
                 Q${x + width},${y} ${x + width},${y + radius} 
                 L${x + width},${y + height} 
                 Z`} 
-                fill='#34CAA5' opacity='0.4'
+                fill='#34CAA5' opacity='0.6'
         />
     );
     };

@@ -24,7 +24,7 @@ const Header = () => {
           <Link className="flex lg:hidden items-center justify-center">
             <LogoIcon className={'fill-[#34CAA5] dark:fill-[#34CAA5]'} />
           </Link>
-          <h1 className="hidden md:block mini:hidden text-[20px] md:leading-7 font-semibold text-black dark:text-white">Dashboard</h1>
+          <h1 className="hidden md:block mini:hidden text-[20px] md:leading-7 font-bold text-black dark:text-white">Dashboard</h1>
         </Link>
         <div className="flex items-center gap-3 md:gap-7">
           <div className="flex gap-5 items-center">
