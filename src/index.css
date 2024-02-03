@@ -9,3 +9,7 @@ body {
   box-sizing: border-box;
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
+
+.recharts-responsive-container {
+  margin: 0;
+}

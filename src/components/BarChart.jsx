@@ -1,9 +1,8 @@
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 
-// Custom shape function for rounded top-left and top-right edges
 const RoundedBar = ({ x, y, width, height }) => {
-    const radius = 50;
+    const radius = 20;
     return (
                 <path d={`M${x},${y + height} 
                 L${x},${y + radius} 
@@ -12,21 +11,24 @@ const RoundedBar = ({ x, y, width, height }) => {
                 Q${x + width},${y} ${x + width},${y + radius} 
                 L${x + width},${y + height} 
                 Z`} 
-        fill="rgb(64, 169, 255)"
+                fill='#34CAA5' opacity='0.4'
         />
     );
     };
 
+
 const CustomBarChart = ({data}) => {
+
   return (
-    <BarChart width={600} height={300} data={data}>
-    <CartesianGrid strokeDasharray="3 3" />
-    <XAxis dataKey="name" />
-    <YAxis />
+    <ResponsiveContainer width="100%" height="100%">
+        <BarChart width={700} height={300} data={data}  barCategoryGap='10%' barSize={30} margin={0}>
+    <CartesianGrid strokeDasharray="3 3" stroke='#EAEAEA'  />
+    <XAxis dataKey="month" fontSize={10} interval={0} strokeWidth={0} margin={0} color='#525252' fontWeight={400}/>
+    <YAxis fontSize={10} strokeWidth={0} margin={0} ticks={[0, 5000, 10000, 20000, 30000, 40000, 50000]} color='#525252' fontWeight={400}/>
     <Tooltip />
-    <Legend />
-    <Bar shape={<RoundedBar />} dataKey="value" fill="#8884d8" />
+    <Bar shape={<RoundedBar />} dataKey="value" fill='#34CAA5'/>
   </BarChart>
+    </ResponsiveContainer>
   )
 }
 

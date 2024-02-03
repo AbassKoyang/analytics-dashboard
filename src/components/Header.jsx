@@ -18,7 +18,7 @@ const Header = () => {
   }, [])
   
   return (
-    <header className="w-full flex items-center justify-center py-[18px] xl:py-[20px] bg-[#FAFAFA] dark:bg-[#1b1b1b]">
+    <header className="w-full flex items-center justify-center py-[18px] xl:py-[20px] bg-[#FAFAFA] dark:bg-[#1b1b1b] border-b border-b-[#E5EAEF]">
       <div className="w-full max-w-[1400px] flex justify-between items-center px-3 md:px-6">
         <Link to='/' aria-label="Logo(Link to home)" className="flex gap-2 items-center justify-center">
           <Link className="flex lg:hidden items-center justify-center">

@@ -1,16 +1,10 @@
 import CustomBarChart from "./BarChart"
+import { monthlyData } from "../assets/constants";
 
-// Example data
-const data = [
-    { name: 'A', value: 400 },
-    { name: 'B', value: 300 },
-    { name: 'C', value: 200 },
-    { name: 'D', value: 500 },
-  ];
 const ChartCard = () => {
   return (
-    <div className="bg-blue-500 col-span-5 lg:col-span-3">
-        <CustomBarChart data={data} />
+    <div className="p-4 rounded-xl bg-white border border-[#EDF2F7] col-span-5 lg:col-span-3 overflow-x-auto lg:overflow-hidden flex justify-center items-center">
+        <CustomBarChart data={monthlyData} />
     </div>
   )
 }
