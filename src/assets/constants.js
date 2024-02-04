@@ -110,3 +110,13 @@ export const yearlyData = [
         value:  12000,
     },
 ]
+
+export const orders = [
+    {id: 1, imageUrl: '', name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
+    {id: 1, imageUrl: '', name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
+    {id: 1, imageUrl: '', name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
+    {id: 1, imageUrl: '', name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
+    {id: 1, imageUrl: '', name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
+    {id: 1, imageUrl: '', name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
+    {id: 1, imageUrl: '', name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
+]
