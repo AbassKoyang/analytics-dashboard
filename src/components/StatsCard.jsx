@@ -17,13 +17,13 @@ const StatsCard = ({icon, graph, heading, value, percentage, trendIcon, text, te
         <>
         <div className="flex items-center justify-between">
         <span className="size-10 bg-gray-200 dark:bg-slate-600 rounded-[50%]"></span>
-        <div className="w-24 h-7 rounded-md bg-gray-200 dark:bg-slate-600"></div>
+        <div className="w-28 lg:w-24  h-7 rounded-md bg-gray-200 dark:bg-slate-600"></div>
         </div>
-        <div className="w-20 h-5 rounded-xl bg-gray-200 dark:bg-slate-600 my-2.5"></div>
-        <div className="w-12 h-7 rounded-xl bg-gray-200 dark:bg-slate-600"></div>
+        <div className="w-24 lg:w-20  h-5 rounded-xl bg-gray-200 dark:bg-slate-600 my-2.5"></div>
+        <div className="w-14 lg:w-12  h-7 rounded-xl bg-gray-200 dark:bg-slate-600"></div>
         <div className="flex items-center justify-between mt-2.5">
-        <div className='w-20 h-5 rounded-xl bg-gray-200 dark:bg-slate-600'></div>
-        <div className="w-28 h-4 rounded-xl bg-gray-200 dark:bg-slate-600"></div>
+        <div className='w-24 lg:w-20 h-5 rounded-xl bg-gray-200 dark:bg-slate-600'></div>
+        <div className="w-32 lg:w-28  h-4 rounded-xl bg-gray-200 dark:bg-slate-600"></div>
         </div>
         </>
     )}

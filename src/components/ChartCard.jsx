@@ -59,7 +59,7 @@ const ChartCard = () => {
             </div>
         </div>
         {isLoading && (
-            <div className="w-full h-full flex items-end gap-[4%] justify-center border border-gray-300 dark:border-white/35 border-dashed">
+            <div className="w-full h-[300px] px-2 lg:h-full flex items-end gap-[4%] justify-center border border-gray-300 dark:border-white/35 border-dashed">
                 <div className="h-[55%] w-8 animate-pulse rounded-t-2xl bg-gray-200 dark:bg-slate-600"></div>
                 <div className="h-[35%] w-8 animate-pulse rounded-t-2xl bg-gray-200 dark:bg-slate-600"></div>
                 <div className="h-[45%] w-8 animate-pulse rounded-t-2xl bg-gray-200 dark:bg-slate-600"></div>
