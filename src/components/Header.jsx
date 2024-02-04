@@ -18,7 +18,7 @@ const Header = () => {
   }, [])
   
   return (
-    <header className="w-full flex items-center justify-center py-[18px] xl:py-[20px] bg-[#FAFAFA] dark:bg-[#1b1b1b] border-b border-b-[#E5EAEF]">
+    <header className="w-full flex items-center justify-center py-[18px] xl:py-[20px] bg-[#FAFAFA] dark:bg-[#1b1b1b] border-b border-b-[#E5EAEF] dark:border-b-white/35">
       <div className="w-full max-w-[1400px] flex justify-between items-center px-3 md:px-6">
         <Link to='/' aria-label="Logo(Link to home)" className="flex gap-2 items-center justify-center">
           <Link className="flex lg:hidden items-center justify-center">
@@ -39,7 +39,7 @@ const Header = () => {
           </div>
 
           <div className="flex gap-2 md:gap-5 items-center">
-            <button onClick={() => setIsPopUpOpen(true)} aria-label="Notification button, click to open notification pop-up." aria-placeholder="Notifications" aria-haspopup={true} aria-expanded={isPopUpOpen} className="p-2 bg-transparent border-[0.77px] border-[#DADDDD] rounded-full relative">
+            <button onClick={() => setIsPopUpOpen(true)} aria-label="Notification button, click to open notification pop-up." aria-placeholder="Notifications" aria-haspopup={true} aria-expanded={isPopUpOpen} className="p-2 bg-transparent border-[0.77px] border-[#DADDDD] dark:border-white/35 rounded-full relative">
               <NotificationIcon className='size-4 xl:size-[18px] fill-[#0D062D] dark:fill-white'/>
               <div className={`${isPopUpOpen ? 'flex' : 'hidden'} flex-col w-[250px] flex-wrap absolute right-0 -bottom-[110px] flex bg-white dark:bg-black p-3 rounded-lg drop-shadow-sm`}>
                 <div className={`flex items-center w-full justify-between mb-3`}>
@@ -53,7 +53,7 @@ const Header = () => {
               </div>
             </button>
 
-            <button onClick={() => setIsProfilePopUpOpen(!isProfilePopUpOpen)} aria-label="Profile button, click to open profile drop-down." aria-haspopup='true' aria-expanded={isProfilePopUpOpen} className="p-1 border border-[#DADDDD] rounded-3xl xl:rounded-[40px] flex gap-3 items-center relative">
+            <button onClick={() => setIsProfilePopUpOpen(!isProfilePopUpOpen)} aria-label="Profile button, click to open profile drop-down." aria-haspopup='true' aria-expanded={isProfilePopUpOpen} className="p-1 border border-[#DADDDD] dark:border-white/35 rounded-3xl xl:rounded-[40px] flex gap-3 items-center relative">
               <img src={image} alt="profile image" className="size-8 xl:size-12"/>
               <div className="hidden lg:flex flex-col">
                 <h5 className="font-normal text-sm xl:text-[16px] text-[#26282C] dark:text-white/95">Justin Bergson</h5>

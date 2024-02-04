@@ -11,7 +11,7 @@ const RoundedBar = ({ x, y, width, height }) => {
                 Q${x + width},${y} ${x + width},${y + radius} 
                 L${x + width},${y + height} 
                 Z`} 
-                fill='#34CAA5' opacity='0.6'
+                fill='#34CAA5' opacity='0.9'
         />
     );
     };
@@ -22,9 +22,9 @@ const CustomBarChart = ({data, barsize, ticks, selectedPeriod, width}) => {
   return (
 
         <BarChart width={width} height={270} data={data}  barCategoryGap='10%' barSize={barsize} margin={0}>
-    <CartesianGrid strokeDasharray="3 3" stroke='#EAEAEA'  />
-    <XAxis dataKey={selectedPeriod} fontSize={10} interval={0} strokeWidth={0} margin={0} color='#525252' fontWeight={400}/>
-    <YAxis fontSize={10} strokeWidth={0} margin={0} ticks={ticks}  color='#525252' fontWeight={400}/>
+    <CartesianGrid strokeDasharray="3 3" stroke='#bbbaba'  />
+    <XAxis dataKey={selectedPeriod} fontSize={10} interval={0} strokeWidth={0} margin={0} color='#888888' fontWeight={400}/>
+    <YAxis fontSize={10} strokeWidth={0} margin={0} ticks={ticks}  color='#888888' fontWeight={400}/>
     <Tooltip />
     <Bar shape={<RoundedBar />} dataKey="value" fill='#34CAA5'/>
   </BarChart>
