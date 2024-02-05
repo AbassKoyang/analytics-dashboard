@@ -11,7 +11,7 @@ const OrderItem = ({imageUrl, name, date, amount, status, statusColor}) => {
         <p className="text-[#737373] dark:text-white/85 text-sm md:text-[16px]">{date}</p>
         <p className="text-[#0D062D] dark:text-white/90 text-sm md:text-[16px]">{amount}</p>
         <p className={`${statusColor} text-sm md:text-[16px]`}>{status}</p>
-        <button className="text-[#0D062D] dark:text-white/90 flex items-center gap-1 text-sm bg-transparent outline-0 border-0"> <InvoiceIcon /> View</button>
+        <button className="text-[#0D062D] dark:text-white/90 flex items-center gap-1 text-sm bg-transparent outline-0 border-0 hover:bg-[#34caa43a] hover:px-2 hover:py-1 rounded-2xl transition-all duration-100 ease-in-out"> <InvoiceIcon className='fill-[#0D062D] dark:fill-white/90' /> View</button>
     </div>
   )
 }
