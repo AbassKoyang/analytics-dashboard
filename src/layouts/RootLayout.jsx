@@ -5,9 +5,9 @@ import TabBar from "../components/TabBar"
 
 const RootLayout = () => {
   return (
-    <main className="w-full bg-green-400 dark:bg-[#1b1b1b] h-dvh transition-all duration-200 ease-in-out">
+    <main className="w-full h-dvh transition-all duration-200 ease-in-out bg-[#FAFAFA] dark:bg-[#1b1b1b] p-3 lg:p-5">
         <SideBar />
-        <section className='p-0 m-0 lg:pl-[53.9px] xl:pl-[63px]'>
+        <section className='p-0 m-0 lg:pl-[53.9px] xl:pl-[63px] bg-[#FAFAFA] dark:bg-[#1b1b1b]'>
         <Header />
         <Outlet />
         <TabBar />

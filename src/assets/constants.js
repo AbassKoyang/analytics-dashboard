@@ -1,3 +1,4 @@
+import Marcus from '../assets/marcus.png'
 export const weeklyData = [
     {
         day: 'Sun',
@@ -112,11 +113,11 @@ export const yearlyData = [
 ]
 
 export const orders = [
-    {id: 1, imageUrl: '', name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
-    {id: 1, imageUrl: '', name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
-    {id: 1, imageUrl: '', name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
-    {id: 1, imageUrl: '', name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
-    {id: 1, imageUrl: '', name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
-    {id: 1, imageUrl: '', name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
-    {id: 1, imageUrl: '', name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
+    {id: 1, imageUrl: Marcus, name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
+    {id: 1, imageUrl: Marcus, name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
+    {id: 1, imageUrl: Marcus, name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
+    {id: 1, imageUrl: Marcus, name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
+    {id: 1, imageUrl: Marcus, name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
+    {id: 1, imageUrl: Marcus, name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
+    {id: 1, imageUrl: Marcus, name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
 ]

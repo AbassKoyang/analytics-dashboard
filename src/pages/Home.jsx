@@ -9,8 +9,8 @@ import OrdersCard from "../components/OrdersCard"
 
 const Home = () => {
   return (
-    <>
-    <section className="w-full grid grid-cols-5 gap-3 bg-[#FAFAFA] dark:bg-[#1b1b1b] p-5">
+    <section className="w-full bg-[#FAFAFA] dark:bg-[#1b1b1b]">
+    <section className="w-full grid grid-cols-5 gap-3 bg-[#FAFAFA] dark:bg-[#1b1b1b]">
       <ChartCard />
       <div className="w-full grid grid-cols-2 col-span-5 gap-3 lg:col-span-2 self-start">
       <StatsCard graph={totalOrderGraph} icon={<RefundIcon />} heading='Total Order' value='350' percentage='23.5%' trendIcon={<TrendUpIcon />} text='vs. previous month' textColor='text-[#34CAA5]' backGroundColor='bg-[#34caa43a]'  />
@@ -20,10 +20,11 @@ const Home = () => {
       </div>
     </section>
 
-    <section className="w-full grid grid-cols-5 gap-3 bg-[#FAFAFA] dark:bg-[#1b1b1b] p-5 mt-5">
+    <section className="w-full grid grid-cols-5 gap-3 bg-[#FAFAFA] dark:bg-[#1b1b1b] mt-5">
       <OrdersCard />
+      <div className="col-span-5 lg:col-span-2"></div>
     </section>
-    </>
+    </section>
   )
 }
 
