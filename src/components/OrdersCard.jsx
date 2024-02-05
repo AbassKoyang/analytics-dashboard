@@ -3,7 +3,7 @@ import { orders } from "../assets/constants"
 import OrderItem from "./OrderItem"
 
 const OrdersCard = () => {
-    const [viewAll, setViewAll] = useState(false)
+    const [viewAll, setViewAll] = useState(false);
   return (
     <div className="w-full p-4 bg-white dark:bg-black border border-[#EDF2F7] dark:border-white/35 rounded-xl col-span-5 lg:col-span-3 overflow-auto max-w-[800px] transition-all duration-300 ease-in-out">
         <div className="w-full flex justify-between items-center">
@@ -21,12 +21,12 @@ const OrdersCard = () => {
             <div className="w-full transition-all duration-300 ease-in-out">
                 {viewAll && (
                     orders.map((order) => (
-                        <OrderItem key={order.id} imageUrl={order.imageUrl} name={order.name} amount={order.amount} date={order.date}  status={order.status} statusColor={order.statusColor}/>
+                        <OrderItem key={order.id} id={order.id} imageUrl={order.imageUrl} name={order.name} amount={order.amount} date={order.date}  status={order.status} statusColor={order.statusColor}/>
                     ))
                 )}
                 {viewAll === false && (
                     orders.slice(0,5).map((order) => (
-                        <OrderItem key={order.id} imageUrl={order.imageUrl} name={order.name} amount={order.amount} date={order.date}  status={order.status} statusColor={order.statusColor}/>
+                        <OrderItem key={order.id} id={order.id} imageUrl={order.imageUrl} name={order.name} amount={order.amount} date={order.date}  status={order.status} statusColor={order.statusColor}/>
                     ))
                 )}
             </div>
