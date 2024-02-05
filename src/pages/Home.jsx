@@ -6,6 +6,7 @@ import averageSalesGraph from  '../assets/averagesalesgraph.png'
 import { BoxIcon, CartIcon, CoinIcon, RefundIcon, TrendDownIcon, TrendUpIcon } from "../assets/icons"
 import ChartCard from "../components/ChartCard"
 import OrdersCard from "../components/OrdersCard"
+import TopPlatformCard from "../components/TopPlatformCard"
 
 const Home = () => {
   return (
@@ -22,7 +23,7 @@ const Home = () => {
 
     <section className="w-full grid grid-cols-5 gap-3 bg-[#FAFAFA] dark:bg-[#1b1b1b] mt-5">
       <OrdersCard />
-      <div className="col-span-5 lg:col-span-2"></div>
+      <TopPlatformCard />
     </section>
     </section>
   )

@@ -1,4 +1,8 @@
-import Marcus from '../assets/marcus.png'
+import Marcus from '../assets/marcus.png';
+import Jaydon from '../assets/jaydon.png';
+import Philip from '../assets/philip.png';
+import Cooper from '../assets/cooper.png';
+import Corey from '../assets/corey.png';
 export const weeklyData = [
     {
         day: 'Sun',
@@ -114,10 +118,13 @@ export const yearlyData = [
 
 export const orders = [
     {id: 1, imageUrl: Marcus, name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
-    {id: 1, imageUrl: Marcus, name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
-    {id: 1, imageUrl: Marcus, name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
-    {id: 1, imageUrl: Marcus, name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
-    {id: 1, imageUrl: Marcus, name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
-    {id: 1, imageUrl: Marcus, name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
-    {id: 1, imageUrl: Marcus, name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
+    {id: 2, imageUrl: Jaydon, name: 'Jaydon Vaccaro', date: 'Nov 15, 2023', amount: '$150,000', status: 'Refund', statusColor: 'text-[#ED544E]' ,},
+    {id: 3, imageUrl: Corey, name: 'Corey Schleifer', date: 'Nov 15, 2023', amount: '$87,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
+    {id: 4, imageUrl: Cooper, name: 'Cooper Press', date: 'Nov 15, 2023', amount: '$100,000', status: 'Refund', statusColor: 'text-[#ED544E]' ,},
+    {id: 5, imageUrl: Philip, name: 'Phillip Lubin', date: 'Nov 15, 2023', amount: '$78,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
+    {id: 6, imageUrl: Marcus, name: 'Marcus Bergson', date: 'Nov 15, 2023', amount: '$80,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
+    {id: 7, imageUrl: Jaydon, name: 'Jaydon Vaccaro', date: 'Nov 15, 2023', amount: '$150,000', status: 'Refund', statusColor: 'text-[#ED544E]' ,},
+    {id: 8, imageUrl: Corey, name: 'Corey Schleifer', date: 'Nov 15, 2023', amount: '$87,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
+    {id: 9, imageUrl: Cooper, name: 'Cooper Press', date: 'Nov 15, 2023', amount: '$100,000', status: 'Refund', statusColor: 'text-[#ED544E]' ,},
+    {id: 10, imageUrl: Philip, name: 'Phillip Lubin', date: 'Nov 15, 2023', amount: '$78,000', status: 'Paid', statusColor: 'text-[#34CAA5]' ,},
 ]
