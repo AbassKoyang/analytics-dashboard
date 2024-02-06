@@ -9,7 +9,7 @@ const Header = () => {
   const [isPopUpOpen, setIsPopUpOpen] = useState(false);
   const [isProfilePopUpOpen, setIsProfilePopUpOpen] = useState(false);
   const containerRef = useRef(null);
-  const [isScrolledUp, setIsScrolledUp] = useState(true);
+  const [isScrolledUp, setIsScrolledUp] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
 
 
@@ -50,8 +50,8 @@ const Header = () => {
   }, [])
   
   return (
-    <header className={`w-full flex items-center justify-center py-[18px] xl:py-[20px] p-0 lg:pl-[53.9px] xl:pl-[63px] bg-[#FAFAFA] dark:bg-[#1b1b1b] border-b border-b-[#E5EAEF] dark:border-b-white/35 fixed top-0 left-0 ${isScrolledUp ? 'visible' : 'invisible'} z-40`}>
-      <div className="w-full max-w-[1400px] flex justify-between items-center px-3 small:px-2 md:px-6">
+    <header className={`w-full flex items-center justify-center py-[18px] xl:py-[20px] p-0 lg:pl-[53.9px] xl:pl-[63px] bg-[#FAFAFA] dark:bg-[#1b1b1b] border-b border-b-[#E5EAEF] dark:border-b-white/35 fixed top-0 left-0 ${!isScrolledUp ? 'visible' : 'invisible'} z-40`}>
+      <div className="w-full max-w-[1400px] flex justify-between items-center px-3 small:px-2 md:px-6 xl:px-0">
         <Link to='/' aria-label="Logo(Link to home)" className="flex gap-2 items-center justify-center">
           <Link className="flex lg:hidden items-center justify-center">
             <LogoIcon className={'fill-[#34CAA5] dark:fill-[#34CAA5]'} />

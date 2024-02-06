@@ -66,8 +66,8 @@ const SideBar = () => {
         <button aria-label="Settings button, click to open settings" className="group size-9 xl:size-10 flex items-center justify-center mx-2 xl:mx-2.5 transition-all duration-200 ease-in-out">
           <SettingsIcon className='stroke-[#B2ABAB] group-hover:stroke-black group-hover:dark:stroke-white transition-all duration-200 ease-in-out' />
         </button>
-        <button aria-label="Logout button, click to logout" className="group size-9 xl:size-10 flex items-center justify-center mx-2 xl:mx-2.5 transition-all duration-200 ease-in-out">
-          <LogOutIcon className='stroke-[#B2ABAB] group-hover:stroke-black group-hover:dark:stroke-white transition-all duration-200 ease-in-out' />
+        <button aria-label="Logout button, click to logout" className="group size-9 xl:size-10 flex items-center justify-center mx-2 xl:mx-2.5 transition-all duration-200 ease-in-out relative before:block before:w-3 before:w- after:block after:content-['Logout'] after:absolute after:px-3 after:py-2 after:rounded-sm after:bg-black after:text-white after:text-sm after:right-[-100px] after:top-[50%] after:translate-y-[-50%]">
+          <LogOutIcon className="stroke-[#B2ABAB] group-hover:stroke-black group-hover:dark:stroke-white transition-all duration-200 ease-in-out" />
         </button>
       </div>
     </aside>

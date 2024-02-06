@@ -17,8 +17,8 @@ const ChartCard = () => {
             setBarRadius(15)
           } else if (window.innerWidth > 1400) {
             setBarSize(40); // Default bar size for larger screens
-            setChartWidth(1000)
-            setBarRadius(30)
+            setChartWidth(800)
+            setBarRadius(20)
           } else {
             setBarSize(35)
             setChartWidth(730)
@@ -63,18 +63,18 @@ const ChartCard = () => {
             </div>
         </div>
         {isLoading && (
-            <div className="w-full h-[300px] px-2 lg:h-full flex items-end gap-[4%] justify-center border border-gray-300 dark:border-white/35 border-dashed">
-                <div className="h-[55%] w-8 animate-pulse rounded-t-2xl bg-gray-200 dark:bg-slate-600"></div>
-                <div className="h-[35%] w-8 animate-pulse rounded-t-2xl bg-gray-200 dark:bg-slate-600"></div>
-                <div className="h-[45%] w-8 animate-pulse rounded-t-2xl bg-gray-200 dark:bg-slate-600"></div>
-                <div className="h-[75%] w-8 animate-pulse rounded-t-2xl bg-gray-200 dark:bg-slate-600"></div>
-                <div className="h-[47%] w-8 animate-pulse rounded-t-2xl bg-gray-200 dark:bg-slate-600"></div>
-                <div className="h-[90%] w-8 animate-pulse rounded-t-2xl bg-gray-200 dark:bg-slate-600"></div>
-                <div className="h-[40%] w-8 animate-pulse rounded-t-2xl bg-gray-200 dark:bg-slate-600"></div>
-                <div className="h-[60%] w-8 animate-pulse rounded-t-2xl bg-gray-200 dark:bg-slate-600"></div>
-                <div className="h-[20%] w-8 animate-pulse rounded-t-2xl bg-gray-200 dark:bg-slate-600"></div>
-                <div className="h-[70%] w-8 animate-pulse rounded-t-2xl bg-gray-200 dark:bg-slate-600"></div>
-                <div className="h-[45%] w-8 animate-pulse rounded-t-2xl bg-gray-200 dark:bg-slate-600"></div>
+            <div className="w-full h-[300px] px-2 lg:h-full flex items-end gap-[4%] justify-center border border-gray-300 dark:border-white/35 border-dashed" aria-label='Skeleton loader'>
+                <div className="h-[55%] w-8 animate-pulse rounded-t-2xl bg-gray-200 dark:bg-slate-600" aria-label='Skeleton loader'></div>
+                <div className="h-[35%] w-8 animate-pulse rounded-t-2xl bg-gray-200 dark:bg-slate-600" aria-label='Skeleton loader'></div>
+                <div className="h-[45%] w-8 animate-pulse rounded-t-2xl bg-gray-200 dark:bg-slate-600" aria-label='Skeleton loader'></div>
+                <div className="h-[75%] w-8 animate-pulse rounded-t-2xl bg-gray-200 dark:bg-slate-600" aria-label='Skeleton loader'></div>
+                <div className="h-[47%] w-8 animate-pulse rounded-t-2xl bg-gray-200 dark:bg-slate-600" aria-label='Skeleton loader'></div>
+                <div className="h-[90%] w-8 animate-pulse rounded-t-2xl bg-gray-200 dark:bg-slate-600" aria-label='Skeleton loader'></div>
+                <div className="h-[40%] w-8 animate-pulse rounded-t-2xl bg-gray-200 dark:bg-slate-600" aria-label='Skeleton loader'></div>
+                <div className="h-[60%] w-8 animate-pulse rounded-t-2xl bg-gray-200 dark:bg-slate-600" aria-label='Skeleton loader'></div>
+                <div className="h-[20%] w-8 animate-pulse rounded-t-2xl bg-gray-200 dark:bg-slate-600" aria-label='Skeleton loader'></div>
+                <div className="h-[70%] w-8 animate-pulse rounded-t-2xl bg-gray-200 dark:bg-slate-600" aria-label='Skeleton loader'></div>
+                <div className="h-[45%] w-8 animate-pulse rounded-t-2xl bg-gray-200 dark:bg-slate-600" aria-label='Skeleton loader'></div>
             </div>
         )}
         {!isLoading && (

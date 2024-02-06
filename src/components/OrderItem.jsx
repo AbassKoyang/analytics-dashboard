@@ -8,6 +8,7 @@ const OrderItem = ({id,imageUrl, name, date, amount, status, statusColor}) => {
   const [viewInvoice, setViewInvoice] = useState(false);
   const containerRef = useRef(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [isPageLoading, setIsPageLoading] = useState(true);
 
   const handleDocumentClick = (event) => {
     if (containerRef.current && !containerRef.current.contains(event.target)) {
@@ -22,6 +23,12 @@ const OrderItem = ({id,imageUrl, name, date, amount, status, statusColor}) => {
       document.removeEventListener('click', handleDocumentClick);
     };
   }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+        setIsPageLoading(false);
+    }, 2000);
+    }, []);
   
 
   const downloadImage = () => {
@@ -38,17 +45,33 @@ const OrderItem = ({id,imageUrl, name, date, amount, status, statusColor}) => {
 
   return (
     <div ref={containerRef} className="w-[600px] lg:w-full flex items-center justify-between py-3 border-t border-y-[#EDF2F6] dark:border-y-white/35">
-        <div className="flex items-center gap-1 md:gap-3">
+        
+        {isPageLoading && (
+          <>
+          <div className="flex items-center gap-2 md:gap-3" aria-label="Skeleton loader">
+            <div className="size-8 rounded-[50%] bg-gray-200 dark:bg-slate-600 animate-pulse" aria-label='Skeleton loader'  />
+            <div className="w-20 lg:w-24  h-4 rounded-xl bg-gray-200 dark:bg-slate-600 animate-pulse" aria-label='Skeleton loader'  />
+          </div>
+          <div className="w-20 lg:w-24  h-4 rounded-xl bg-gray-200 dark:bg-slate-600 animate-pulse" aria-label='Skeleton loader'  />
+          <div className="w-16 lg:w-20  h-4 rounded-xl bg-gray-200 dark:bg-slate-600 animate-pulse" aria-label='Skeleton loader'  />
+          <div className="w-16 lg:w-20  h-4 rounded-xl bg-gray-200 dark:bg-slate-600 animate-pulse" aria-label='Skeleton loader'  />
+          <div className="w-14 lg:w-16  h-4 rounded-xl bg-gray-200 dark:bg-slate-600 animate-pulse" aria-label='Skeleton loader'  />
+          </>
+        )}
+        {!isPageLoading && (
+          <>
+          <div className="flex items-center gap-2 md:gap-3">
             <img src={imageUrl} alt="Orderer's pic" className="size-8" />
             <p className="text-[#3A3F51] dark:text-white text-sm md:text-[16px]">{name}</p>
-        </div>
+          </div>
 
-        <p className="text-[#737373] dark:text-white/85 text-sm md:text-[16px]">{date}</p>
-        <p className="text-[#0D062D] dark:text-white/90 text-sm md:text-[16px]">{amount}</p>
-        <p className={`${statusColor} text-sm md:text-[16px]`}>{status}</p>
-        <button onClick={() => setViewInvoice(!viewInvoice)} aria-haspopup={true} aria-expanded={viewInvoice} aria-label="Click to see invoice." className="text-[#0D062D] dark:text-white/90 flex items-center gap-1 text-sm bg-transparent outline-0 border-0 hover:bg-[#34caa43a] hover:px-2 hover:py-1 rounded-2xl transition-all duration-100 ease-in-out"> <InvoiceIcon className='fill-[#0D062D] dark:fill-white/90' /> 
-        View
-        </button>
+          <p className="text-[#737373] dark:text-white/85 text-sm md:text-[16px]">{date}</p>
+          <p className="text-[#0D062D] dark:text-white/90 text-sm md:text-[16px]">{amount}</p>
+          <p className={`${statusColor} text-sm md:text-[16px]`}>{status}</p>
+          <button onClick={() => setViewInvoice(!viewInvoice)} aria-haspopup={true} aria-expanded={viewInvoice} aria-label="Click to see invoice." className="text-[#0D062D] dark:text-white/90 flex items-center gap-1 text-sm bg-transparent outline-0 border-0 hover:bg-[#34caa43a] hover:px-2 hover:py-1 rounded-2xl transition-all duration-100 ease-in-out"> <InvoiceIcon className='fill-[#0D062D] dark:fill-white/90' />View</button>
+          </>
+        )}
+
         <div className={`${viewInvoice ? 'block' : 'hidden'} modal-content w-[400px] p-7 fixed bottom-[50%] right-[50%] translate-x-[50%] translate-y-[50%] z-20 bg-white dark:bg-black shadow-lg dark:border dark:border-white/35 rounded-md`}>
         <div className="w-full p-3" id={`downloadable-invoice${id}`}>
           <div className="flex w-full items-center justify-between mb-3">
