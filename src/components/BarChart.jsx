@@ -1,8 +1,7 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 
-const RoundedBar = ({ x, y, width, height }) => {
-    const radius = 20;
+const RoundedBar = ({ x, y, width, height, radius }) => {
     return (
                 <path d={`M${x},${y + height} 
                 L${x},${y + radius} 
@@ -17,7 +16,7 @@ const RoundedBar = ({ x, y, width, height }) => {
     };
 
 
-const CustomBarChart = ({data, barsize, ticks, selectedPeriod, width}) => {
+const CustomBarChart = ({data, barsize, ticks, selectedPeriod, width, radius}) => {
 
   return (
 
@@ -26,7 +25,7 @@ const CustomBarChart = ({data, barsize, ticks, selectedPeriod, width}) => {
     <XAxis dataKey={selectedPeriod} fontSize={10} interval={0} strokeWidth={0} margin={0} color='#888888' fontWeight={400}/>
     <YAxis fontSize={10} strokeWidth={0} margin={0} ticks={ticks}  color='#888888' fontWeight={400}/>
     <Tooltip />
-    <Bar shape={<RoundedBar />} dataKey="value" fill='#34CAA5'/>
+    <Bar shape={<RoundedBar radius={radius} />} dataKey="value" fill='#34CAA5'/>
   </BarChart>
   )
 }

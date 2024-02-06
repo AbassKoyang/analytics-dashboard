@@ -3,7 +3,7 @@ import { ChartIcon, DiscountIcon, HomeIcon, InfoIcon, ProfileIcon, TrendsIcon } 
 const TabBar = () => {
     const location = useLocation()
   return (
-      <nav className="w-full flex lg:hidden fixed bottom-0 left-0 items-center justify-center gap-1 py-4 border-t border-t-[#EBECF2] dark:border-t-[#A3A3A3] bg-[#F7F8FA] dark:bg-[#1b1b1b]">
+      <nav className="w-full flex lg:hidden fixed bottom-0 left-0 items-center justify-center gap-1 py-4 border-t border-t-[#EBECF2] dark:border-t-[#A3A3A3] bg-[#F7F8FA] dark:bg-[#1b1b1b] z-50">
         <Link to='/' aria-label="Link to home page" className="flex flex-col items-center justify-between group">
           <button className={`size-9 md:size-12 lg:size-9 xl:size-10 flex items-center justify-center rounded-sm hover:p-2 mx-2 xl:mx-2.5 ${location.pathname === '/' ? 'bg-[#0D062D] dark:bg-[#34CAA5] p-2' : 'bg-transparent'} group-hover:bg-[#0D062D] group-hover:dark:bg-[#34CAA5] transition-all duration-200 ease-in-out`} >
             <HomeIcon className={`${location.pathname === '/' ? 'dark:fill-white fill-white' : 'fill-[#B2ABAB]'} group-hover:dark:fill-white group-hover:fill-white transition-all duration-200 ease-in-out`} />

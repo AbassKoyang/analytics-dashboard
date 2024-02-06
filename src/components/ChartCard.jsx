@@ -6,19 +6,23 @@ const ChartCard = () => {
     const [selectedPeriod, setSelectedPeriod] = useState('weekly');
     const [barSize, setBarSize] = useState(30);
     const [chartWidth, setChartWidth] = useState(700);
+    const [barRadius, setBarRadius] = useState(25)
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const handleResize = () => {
-          if (window.innerWidth <= 600) {
+          if (window.innerWidth <= 500) {
             setBarSize(25);
             setChartWidth(450)
+            setBarRadius(15)
           } else if (window.innerWidth > 1400) {
             setBarSize(40); // Default bar size for larger screens
             setChartWidth(1000)
+            setBarRadius(30)
           } else {
             setBarSize(35)
             setChartWidth(730)
+            setBarRadius(23)
           }
         };
     
@@ -76,9 +80,9 @@ const ChartCard = () => {
         {!isLoading && (
             <>
         <div className="w-full h-full flex flex-col items-center justify-center overflow-x-visible lg:overflow-hidden">
-            {selectedPeriod === 'weekly' && <CustomBarChart data={weeklyData} barsize={barSize} ticks={[0, 500, 1000, 2000, 3000, 4000, 5000]}  selectedPeriod='day' width={chartWidth}/>}
-            {selectedPeriod === 'monthly' && <CustomBarChart data={monthlyData} barsize={barSize} ticks={[0, 5000, 10000, 20000, 30000, 40000, 50000]} selectedPeriod='month' width={chartWidth} />}
-            {selectedPeriod === 'yearly' && <CustomBarChart data={yearlyData} barsize={barSize} ticks={[0, 25000, 50000, 100000, 15000, 200000, 250000]} selectedPeriod='year' width={chartWidth} />}
+            {selectedPeriod === 'weekly' && <CustomBarChart data={weeklyData} barsize={barSize} ticks={[0, 500, 1000, 2000, 3000, 4000, 5000]}  selectedPeriod='day' width={chartWidth} radius={barRadius}/>}
+            {selectedPeriod === 'monthly' && <CustomBarChart data={monthlyData} barsize={barSize} ticks={[0, 5000, 10000, 20000, 30000, 40000, 50000]} selectedPeriod='month' width={chartWidth}  radius={barRadius}/>}
+            {selectedPeriod === 'yearly' && <CustomBarChart data={yearlyData} barsize={barSize} ticks={[0, 25000, 50000, 100000, 15000, 200000, 250000]} selectedPeriod='year' width={chartWidth} radius={barRadius} />}
         </div>
         </>
         )}

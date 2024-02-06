@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CalendarIcon, ChevronDownIcon, CloseIcon, LogoIcon, NotificationIcon, SearchIcon } from "../assets/icons";
 import image from '../assets/profile-image.png'
 import { Link } from "react-router-dom";
@@ -8,6 +8,38 @@ const Header = () => {
   const [date, setDate] = useState('');
   const [isPopUpOpen, setIsPopUpOpen] = useState(false);
   const [isProfilePopUpOpen, setIsProfilePopUpOpen] = useState(false);
+  const containerRef = useRef(null);
+  const [isScrolledUp, setIsScrolledUp] = useState(true);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPosition = window.scrollY + 10;
+       setIsScrolledUp(currentScrollPosition > prevScrollPos);
+       setPrevScrollPos(currentScrollPosition);
+    }
+  
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [prevScrollPos]);
+  
+  const handleDocumentClick = (event) => {
+    if (containerRef.current && !containerRef.current.contains(event.target)) {
+      setIsPopUpOpen(false);
+    }
+  };
+  
+  useEffect(() => {
+    document.addEventListener('click', handleDocumentClick);
+  
+    return () => {
+      document.removeEventListener('click', handleDocumentClick);
+    };
+  }, []);
+
   const getDate = () => {
     let date = new Date();
     return `${date.toLocaleString("en-US", { month: "long" })} ${date.getDate()},  ${date.getFullYear()}`;
@@ -18,7 +50,7 @@ const Header = () => {
   }, [])
   
   return (
-    <header className="w-full flex items-center justify-center py-[18px] xl:py-[20px] p-0 lg:pl-[53.9px] xl:pl-[63px] bg-[#FAFAFA] dark:bg-[#1b1b1b] border-b border-b-[#E5EAEF] dark:border-b-white/35">
+    <header className={`w-full flex items-center justify-center py-[18px] xl:py-[20px] p-0 lg:pl-[53.9px] xl:pl-[63px] bg-[#FAFAFA] dark:bg-[#1b1b1b] border-b border-b-[#E5EAEF] dark:border-b-white/35 fixed top-0 left-0 ${isScrolledUp ? 'visible' : 'invisible'} z-40`}>
       <div className="w-full max-w-[1400px] flex justify-between items-center px-3 small:px-2 md:px-6">
         <Link to='/' aria-label="Logo(Link to home)" className="flex gap-2 items-center justify-center">
           <Link className="flex lg:hidden items-center justify-center">
@@ -39,7 +71,7 @@ const Header = () => {
           </div>
 
           <div className="flex gap-2 md:gap-5 items-center">
-            <button onClick={() => setIsPopUpOpen(true)} aria-label="Notification button, click to open notification pop-up." aria-placeholder="Notifications" aria-haspopup={true} aria-expanded={isPopUpOpen} className="p-2 bg-transparent border-[0.77px] border-[#DADDDD] dark:border-white/35 rounded-full relative">
+            <button ref={containerRef} onClick={() => setIsPopUpOpen(true)} aria-label="Notification button, click to open notification pop-up." aria-placeholder="Notifications" aria-haspopup={true} aria-expanded={isPopUpOpen} className="p-2 bg-transparent border-[0.77px] border-[#DADDDD] dark:border-white/35 rounded-full relative">
               <NotificationIcon className='size-4 xl:size-[18px] fill-[#0D062D] dark:fill-white'/>
               <div className={`${isPopUpOpen ? 'flex' : 'hidden'} flex-col w-[250px] flex-wrap absolute right-0 -bottom-[120px] flex bg-white dark:bg-black p-3 rounded-lg drop-shadow-md dark:border dark:border-white/35`}>
                 <div className={`flex items-center w-full justify-between mb-3`}>
