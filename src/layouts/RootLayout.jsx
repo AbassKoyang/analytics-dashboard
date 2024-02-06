@@ -5,10 +5,10 @@ import TabBar from "../components/TabBar"
 
 const RootLayout = () => {
   return (
-    <main className="w-full h-dvh transition-all duration-200 ease-in-out bg-[#FAFAFA] dark:bg-[#1b1b1b] p-3 lg:px-5 lg:py-0">
+    <main className="w-full h-dvh transition-all duration-200 ease-in-out bg-[#FAFAFA] dark:bg-[#1b1b1b]">
         <SideBar />
-        <section className='p-0 m-0 lg:pl-[53.9px] xl:pl-[63px] bg-[#FAFAFA] dark:bg-[#1b1b1b]'>
         <Header />
+        <section className='mb-5 p-3 lg:px-5 lg:py-0 lg:pl-[73.9px] xl:pl-[83px] bg-[#FAFAFA] dark:bg-[#1b1b1b]'>
         <Outlet />
         <TabBar />
         </section>

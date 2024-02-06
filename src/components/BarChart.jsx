@@ -21,7 +21,7 @@ const CustomBarChart = ({data, barsize, ticks, selectedPeriod, width}) => {
 
   return (
 
-        <BarChart width={width} height={270} data={data}  barCategoryGap='10%' barSize={barsize} margin={0}>
+    <BarChart width={width} height={250} data={data}  barCategoryGap='10%' barSize={barsize} margin={0}>
     <CartesianGrid strokeDasharray="3 3" stroke='#bbbaba'  />
     <XAxis dataKey={selectedPeriod} fontSize={10} interval={0} strokeWidth={0} margin={0} color='#888888' fontWeight={400}/>
     <YAxis fontSize={10} strokeWidth={0} margin={0} ticks={ticks}  color='#888888' fontWeight={400}/>

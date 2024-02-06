@@ -18,8 +18,8 @@ const Header = () => {
   }, [])
   
   return (
-    <header className="w-full flex items-center justify-center py-[18px] xl:py-[20px] bg-[#FAFAFA] dark:bg-[#1b1b1b] border-b border-b-[#E5EAEF] dark:border-b-white/35">
-      <div className="w-full max-w-[1400px] flex justify-between items-center px-1 md:px-6">
+    <header className="w-full flex items-center justify-center py-[18px] xl:py-[20px] p-0 lg:pl-[53.9px] xl:pl-[63px] bg-[#FAFAFA] dark:bg-[#1b1b1b] border-b border-b-[#E5EAEF] dark:border-b-white/35">
+      <div className="w-full max-w-[1400px] flex justify-between items-center px-3 small:px-2 md:px-6">
         <Link to='/' aria-label="Logo(Link to home)" className="flex gap-2 items-center justify-center">
           <Link className="flex lg:hidden items-center justify-center">
             <LogoIcon className={'fill-[#34CAA5] dark:fill-[#34CAA5]'} />
@@ -28,7 +28,7 @@ const Header = () => {
         </Link>
         <div className="flex items-center gap-3 md:gap-7">
           <div className="flex gap-5 items-center">
-            <form className='w-[200px] md:w-[300px] xl:w-[350px] flex items-center justify-between px-2 py-1 md:px-3 md:py-2 rounded-3xl bg-[#FFFFFF] dark:bg-black border dark:border-[2px] border-[#A3A3A3]'>
+            <form className='w-[200px] small:w-[180px] md:w-[300px] xl:w-[350px] flex items-center justify-between px-2 py-1 md:px-3 md:py-2 rounded-3xl bg-[#FFFFFF] dark:bg-black border dark:border-[2px] border-[#A3A3A3] focus-within:border-[#cac8c8]'>
               <SearchIcon className={`mr-2`} />
               <input type="search" placeholder="Search..." className='w-full bg-transparent h-full py-0.5 outline-0 border-0 text-[#A3A3A3] dark:text-[#78828A] text-sm xl:text-[16px]'/>
             </form>
@@ -41,7 +41,7 @@ const Header = () => {
           <div className="flex gap-2 md:gap-5 items-center">
             <button onClick={() => setIsPopUpOpen(true)} aria-label="Notification button, click to open notification pop-up." aria-placeholder="Notifications" aria-haspopup={true} aria-expanded={isPopUpOpen} className="p-2 bg-transparent border-[0.77px] border-[#DADDDD] dark:border-white/35 rounded-full relative">
               <NotificationIcon className='size-4 xl:size-[18px] fill-[#0D062D] dark:fill-white'/>
-              <div className={`${isPopUpOpen ? 'flex' : 'hidden'} flex-col w-[250px] flex-wrap absolute right-0 -bottom-[110px] flex bg-white dark:bg-black p-3 rounded-lg drop-shadow-md`}>
+              <div className={`${isPopUpOpen ? 'flex' : 'hidden'} flex-col w-[250px] flex-wrap absolute right-0 -bottom-[120px] flex bg-white dark:bg-black p-3 rounded-lg drop-shadow-md dark:border dark:border-white/35`}>
                 <div className={`flex items-center w-full justify-between mb-3`}>
                   <h5 className="font-medium text-black dark:text-white/95">Notifications</h5>
                   <span onClick={(e)=> {e.stopPropagation(),setIsPopUpOpen(false)}} aria-label="click to close notification pop-up." className="bg-[#FAFAFA] rounded-md border hover:border-gray-400">
@@ -60,7 +60,7 @@ const Header = () => {
                 <small className="text-[#AFAFBF] text-[10px] xl:text-[12px] dark:text-white/60">Justin@gmail.com</small>
               </div>
               <ChevronDownIcon className={`hidden lg:block fill-[#0D062D] dark:fill-white ${isProfilePopUpOpen ? 'rotate-180' : 'rotate-0'} transition-all duration-200 ease-in-out`} />
-              <div onClick={(event) => (event.stopPropagation())} className={`${isProfilePopUpOpen ? 'flex' : 'hidden'} flex-col lg:w-full absolute -bottom-[200px] lg:-bottom-[120px] right-0 lg:left-0 rounded-xl flex-wrap bg-white dark:bg-black p-4 pb-2 text-right drop-shadow-md`}>
+              <div onClick={(event) => (event.stopPropagation())} className={`${isProfilePopUpOpen ? 'flex' : 'hidden'} flex-col lg:w-full absolute -bottom-[200px] lg:-bottom-[120px] right-0 lg:left-0 rounded-xl flex-wrap bg-white dark:bg-black p-4 pb-2 text-left drop-shadow-md z-30 dark:border dark:border-white/35`}>
                 <div className="flex w-full justify-center items-center lg:hidden rotate-90">
                   <DarkModeToggleButton />
                 </div>
