@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { CalendarIcon, ChevronDownIcon, CloseIcon, LogoIcon, NotificationIcon, SearchIcon } from "../assets/icons";
 import image from '../assets/profile-image.png'
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useNavigation } from "react-router-dom";
 import DarkModeToggleButton from "./DarkModeToggleButton";
+import { toast } from "react-toastify";
 
 const Header = () => {
   const [date, setDate] = useState('');
@@ -11,8 +12,9 @@ const Header = () => {
   const containerRef = useRef(null);
   const [isScrolledUp, setIsScrolledUp] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
-
-
+  const [isLogOutPopUp, setIsLogOutPopUp] = useState(false);
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
+  const navigate = useNavigate()
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPosition = window.scrollY + 10;
@@ -48,6 +50,18 @@ const Header = () => {
   useEffect(() => {
     setDate(getDate())
   }, [])
+
+  const handleLogOutButtonClick = ()  => {
+    setIsLoggingOut(true)
+    setTimeout(()=> {
+      setIsLogOutPopUp(false)
+      setIsLoggingOut(false)
+      toast.success('Logged out successfully!', {
+        position: 'bottom-right',
+      })
+      window.location.reload();
+    }, 2000)
+  }
   
   return (
     <header className={`w-full flex items-center justify-center py-[18px] xl:py-[20px] p-0 lg:pl-[53.9px] xl:pl-[63px] bg-[#FAFAFA] dark:bg-[#1b1b1b] border-b border-b-[#E5EAEF] dark:border-b-white/35 fixed top-0 left-0 ${!isScrolledUp ? 'visible' : 'invisible'} z-40`}>
@@ -98,12 +112,19 @@ const Header = () => {
                 </div>
                 <h5 className="font-medium text-[#26282C] dark:text-white/95 text-[12px] md:text-sm">Justin Bergson</h5>
                 <h5 className="font-medium text-[#26282C] dark:text-white/95 text-[12px] md:text-sm">justin@gmail.com</h5>
-                <button className="w-full border-t border-t-[#DADDDD] p-2 text-sm text-red-600 mt-3">
+                <button onClick={() => {setIsLogOutPopUp(true), setIsProfilePopUpOpen(false)}} className="w-full border-t border-t-[#DADDDD] p-2 text-sm text-red-600 mt-3">
                   Logout
                 </button>
               </div>
             </button>
           </div>
+        </div>
+      </div>
+      <div className={`${isLogOutPopUp ? 'flex' : 'hidden'} flex-col items-center fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] p-4 rounded-xl bg-white dark:bg-black drop-shadow-md z-30 dark:border dark:border-white/35`} onClick={(event) => (event.stopPropagation())}>
+        <h1 className="text-lg font-medium text-black dark:text-white max-w-[200px] text-center">Are you sure you want to log out?</h1>
+        <div className="w-full flex items-center justify-center gap-3 mt-3">
+            <button onClick={handleLogOutButtonClick} className="bg-[#34CAA5] text-sm text-white font-semibold px-3 py-2 rounded-xl disabled:opacity-85" disabled={isLoggingOut}>{isLoggingOut ? 'Logging you out...' : 'Log out'}</button>
+            <button onClick={() => setIsLogOutPopUp(false)} className="bg-gray-200 text-black text-sm font-medium px-3 py-2 rounded-xl disabled:opacity-85">Cancel</button>
         </div>
       </div>
     </header>
