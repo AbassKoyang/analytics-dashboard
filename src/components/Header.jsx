@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { CalendarIcon, ChevronDownIcon, CloseIcon, LogoIcon, NotificationIcon, SearchIcon } from "../assets/icons";
 import image from '../assets/profile-image.png'
-import { Link, useNavigate, useNavigation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import DarkModeToggleButton from "./DarkModeToggleButton";
 import { toast } from "react-toastify";
 
@@ -10,11 +10,12 @@ const Header = () => {
   const [isPopUpOpen, setIsPopUpOpen] = useState(false);
   const [isProfilePopUpOpen, setIsProfilePopUpOpen] = useState(false);
   const containerRef = useRef(null);
+  const profilePopUpRef = useRef(null);
   const [isScrolledUp, setIsScrolledUp] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [isLogOutPopUp, setIsLogOutPopUp] = useState(false);
   const [isLoggingOut, setIsLoggingOut] = useState(false);
-  const navigate = useNavigate()
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPosition = window.scrollY + 10;
@@ -31,6 +32,9 @@ const Header = () => {
   const handleDocumentClick = (event) => {
     if (containerRef.current && !containerRef.current.contains(event.target)) {
       setIsPopUpOpen(false);
+    }
+    if (profilePopUpRef.current && !profilePopUpRef.current.contains(event.target)) {
+      setIsProfilePopUpOpen(false);
     }
   };
   
@@ -59,7 +63,9 @@ const Header = () => {
       toast.success('Logged out successfully!', {
         position: 'bottom-right',
       })
-      window.location.reload();
+      setTimeout(() => {
+        window.location.reload();
+      }, 1500);
     }, 2000)
   }
   
@@ -99,7 +105,7 @@ const Header = () => {
               </div>
             </button>
 
-            <button onClick={() => setIsProfilePopUpOpen(!isProfilePopUpOpen)} aria-label="Profile button, click to open profile drop-down." aria-haspopup='true' aria-expanded={isProfilePopUpOpen} className="p-1 border border-[#DADDDD] dark:border-white/35 rounded-3xl xl:rounded-[40px] flex gap-3 items-center relative">
+            <button onClick={() => setIsProfilePopUpOpen(!isProfilePopUpOpen)} ref={profilePopUpRef} aria-label="Profile button, click to open profile drop-down." aria-haspopup='true' aria-expanded={isProfilePopUpOpen} className="p-1 border border-[#DADDDD] dark:border-white/35 rounded-3xl xl:rounded-[40px] flex gap-3 items-center relative">
               <img src={image} alt="profile image" className="size-8 xl:size-12"/>
               <div className="hidden lg:flex flex-col">
                 <h5 className="font-normal text-sm xl:text-[16px] text-[#26282C] dark:text-white/95">Justin Bergson</h5>

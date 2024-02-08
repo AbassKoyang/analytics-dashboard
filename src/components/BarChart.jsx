@@ -13,7 +13,7 @@ const RoundedBar = ({ x, y, width, height, radius }) => {
                 fill='#34CAA5' opacity='0.9'
         />
     );
-    };
+  };
 
 
 const CustomBarChart = ({data, barsize, ticks, selectedPeriod, width, radius}) => {
