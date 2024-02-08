@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { CalendarIcon, ChevronDownIcon, CloseIcon, LogoIcon, NotificationIcon, SearchIcon } from "../assets/icons";
-import image from '../assets/profile-image.png'
+import { CalendarIcon, ChevronDownIcon, CloseIcon, LogoIcon, NotificationIcon, SearchIcon } from "../../src/assets/icons";
+import image from '../../src/assets/profile-image.png'
 import { Link } from "react-router-dom";
 import DarkModeToggleButton from "./DarkModeToggleButton";
 import { toast } from "react-toastify";

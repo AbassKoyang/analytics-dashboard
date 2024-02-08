@@ -1,5 +1,5 @@
 import CustomBarChart from "./BarChart"
-import { monthlyData, weeklyData, yearlyData } from "../assets/constants";
+import { monthlyData, weeklyData, yearlyData } from "../../src/assets/constants";
 import { useEffect, useState } from "react";
 
 const ChartCard = () => {

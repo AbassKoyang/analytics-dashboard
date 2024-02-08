@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { orders } from "../assets/constants"
+import { orders } from "../../src/assets/constants"
 import OrderItem from "./OrderItem"
 
 const OrdersCard = () => {

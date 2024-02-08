@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Platforms from "./Platforms";
-import { platforms } from "../assets/constants";
+import { platforms } from "../../src/assets/constants";
 
 const TopPlatformCard = () => {
     const [viewAll, setViewAll] = useState(false);

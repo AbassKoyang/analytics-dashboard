@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MoonIcon, SunIcon } from "../assets/icons";
+import { MoonIcon, SunIcon } from "../../src/assets/icons";
 
 const DarkModeToggleButton = () => {
   const [theme, setTheme] = useState(localStorage.theme || 'light');

@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom"
-import { ChartIcon, DiscountIcon, HomeIcon, InfoIcon, ProfileIcon, TrendsIcon } from "../assets/icons"
+import { ChartIcon, DiscountIcon, HomeIcon, InfoIcon, ProfileIcon, TrendsIcon } from "../../src/assets/icons"
 import { useEffect, useState } from "react";
 const TabBar = () => {
     const location = useLocation();
