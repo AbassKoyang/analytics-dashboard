@@ -1,11 +1,11 @@
-const LogoIcon = ({className}) => {
+export const LogoIcon = ({className}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" className='size-8 xl:size-10' aria-hidden={true}>
         <path fillRule="evenodd" clipRule="evenodd" d="M20 40C31.0457 40 40 31.0457 40 20C40 8.95431 31.0457 0 20 0C8.95429 0 0 8.95431 0 20C0 31.0457 8.95429 40 20 40ZM26.2393 9.31684C26.543 8.23805 25.4961 7.60013 24.54 8.2813L11.1931 17.7896C10.1562 18.5283 10.3193 20 11.4381 20H14.9527V19.9728H21.8025L16.2212 21.9421L13.7607 30.6832C13.457 31.762 14.5038 32.3999 15.46 31.7187L28.8069 22.2105C29.8438 21.4718 29.6806 20 28.5619 20H23.2321L26.2393 9.31684Z" className={className}/>
     </svg>
   )
 }
-const ChartIcon = ({className}) => {
+export const ChartIcon = ({className}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="fill-none size-5 xl:size-6" aria-hidden={true}>
         <title>Chart</title>
@@ -16,7 +16,7 @@ const ChartIcon = ({className}) => {
     </svg>
   )
 }
-const DiscountIcon = ({className}) => {
+export const DiscountIcon = ({className}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="fill-none size-5 xl:size-6" aria-hidden={true}>
       <title>Discount</title>
@@ -28,7 +28,7 @@ const DiscountIcon = ({className}) => {
     </svg>
   )
 }
-const HomeIcon = ({className}) => {
+export const HomeIcon = ({className}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="fill-none size-5 xl:size-6" aria-hidden={true}>
       <title>Home</title>
@@ -39,7 +39,7 @@ const HomeIcon = ({className}) => {
     </svg>
   )
 }
-const InfoIcon = ({className}) => {
+export const InfoIcon = ({className}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="fill-none size-5 xl:size-6" aria-hidden={true}>
       <title>Info</title>
@@ -49,7 +49,7 @@ const InfoIcon = ({className}) => {
     </svg>
   )
 }
-const ProfileIcon = ({className}) => {
+export const ProfileIcon = ({className}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="fill-none size-5 xl:size-6" aria-hidden={true}>
       <title>Profile</title>
@@ -60,7 +60,7 @@ const ProfileIcon = ({className}) => {
     </svg>
   )
 }
-const TrendsIcon = ({className}) => {
+export const TrendsIcon = ({className}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="fill-none size-5 xl:size-6" aria-hidden={true}>
       <title>Trends</title>
@@ -71,7 +71,7 @@ const TrendsIcon = ({className}) => {
     </svg>
   )
 }
-const PageIdentifierIcon = ({className}) => {
+export const PageIdentifierIcon = ({className}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 21" className={`fill-none w-[2px] h-[14px] xl:w-[3px] xl:h-[21px] ${className}`} aria-hidden={true}>
       <title>Page indicator</title>
@@ -79,7 +79,7 @@ const PageIdentifierIcon = ({className}) => {
     </svg>
   )
 }
-const SunIcon = ({className}) => {
+export const SunIcon = ({className}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" className={className}>
       <title>Light mode</title>
@@ -102,7 +102,7 @@ const SunIcon = ({className}) => {
 </svg>
   )
 }
-const MoonIcon = ({className}) => {
+export const MoonIcon = ({className}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" className={className}>
       <title>Dark mode</title>
@@ -119,7 +119,7 @@ const MoonIcon = ({className}) => {
   )
 }
 
-const ArrowRightIcon = ({className}) => {
+export const ArrowRightIcon = ({className}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" className="fill-none size-5 xl:size-6">
       <title>Backward</title>
@@ -129,7 +129,7 @@ const ArrowRightIcon = ({className}) => {
     </svg>
   )
 }
-const SettingsIcon = ({className}) => {
+export const SettingsIcon = ({className}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="fill-none size-5 xl:size-6">
     <title>Settings</title>
@@ -139,7 +139,7 @@ const SettingsIcon = ({className}) => {
 </svg>
   )
 }
-const LogOutIcon = ({className}) => {
+export const LogOutIcon = ({className}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="fill-none size-5 xl:size-6">
       <title>Log out</title>
@@ -151,7 +151,7 @@ const LogOutIcon = ({className}) => {
 </svg>
   )
 }
-const SearchIcon = ({className}) => {
+export const SearchIcon = ({className}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none" className={className}>
       <title>Search</title>
@@ -159,7 +159,7 @@ const SearchIcon = ({className}) => {
 </svg>
   )
 }
-const NotificationIcon = ({className}) => {
+export const NotificationIcon = ({className}) => {
   return (
     <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
       <title>Notifications</title>
@@ -168,7 +168,7 @@ const NotificationIcon = ({className}) => {
 
   )
 }
-const CalendarIcon = ({className, fill}) => {
+export const CalendarIcon = ({className, fill}) => {
   return (
     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
       <title>Calendar</title>
@@ -179,14 +179,14 @@ const CalendarIcon = ({className, fill}) => {
 
   )
 }
-const CloseIcon = ({className}) => {
+export const CloseIcon = ({className}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className}>
       <title>Close</title>
       <path d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z"></path></svg>
   )
 }
-const ChevronDownIcon = ({className}) => {
+export const ChevronDownIcon = ({className}) => {
   return (
     <svg width="20" height="20" viewBox="0 0 20 20" className={className} xmlns="http://www.w3.org/2000/svg">
       <title>Profile drop-down</title>
@@ -195,7 +195,7 @@ const ChevronDownIcon = ({className}) => {
 
   )
 }
-const BoxIcon = ({className}) => {
+export const BoxIcon = ({className}) => {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <title>Orders</title>
@@ -207,7 +207,7 @@ const BoxIcon = ({className}) => {
 
   )
 }
-const RefundIcon = ({className}) => {
+export const RefundIcon = ({className}) => {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <title>Refunds</title>
@@ -218,7 +218,7 @@ const RefundIcon = ({className}) => {
 </svg>
   )
 }
-const CartIcon = ({className}) => {
+export const CartIcon = ({className}) => {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <title>Cart</title>
@@ -230,7 +230,7 @@ const CartIcon = ({className}) => {
 
   )
 }
-const CoinIcon = ({className}) => {
+export const CoinIcon = ({className}) => {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <title>Sales</title>
@@ -240,7 +240,7 @@ const CoinIcon = ({className}) => {
 </svg>
   )
 }
-const TrendDownIcon = () => {
+export const TrendDownIcon = () => {
   return (
     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
       <title>Percentage decrease</title>
@@ -249,7 +249,7 @@ const TrendDownIcon = () => {
 </svg>
   )
 }
-const TrendUpIcon = () => {
+export const TrendUpIcon = () => {
   return (
     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
       <title>Percentage increase</title>
@@ -258,7 +258,7 @@ const TrendUpIcon = () => {
 </svg>
   )
 }
-const InvoiceIcon = ({className}) => {
+export const InvoiceIcon = ({className}) => {
   return (
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
       <title>Invoice</title>
@@ -271,30 +271,30 @@ const InvoiceIcon = ({className}) => {
   )
 }
 
-export  {
-  LogoIcon,
-  ChartIcon,
-  DiscountIcon,
-  HomeIcon,
-  InfoIcon,
-  ProfileIcon,
-  TrendsIcon,
-  PageIdentifierIcon,
-  SunIcon,
-  MoonIcon,
-  ArrowRightIcon,
-  SettingsIcon,
-  LogOutIcon,
-  SearchIcon,
-  CalendarIcon,
-  NotificationIcon,
-  CloseIcon,
-  ChevronDownIcon,
-  BoxIcon,
-  RefundIcon,
-  CartIcon,
-  CoinIcon,
-  TrendUpIcon,
-  TrendDownIcon,
-  InvoiceIcon,
-};
+// export  {
+//   LogoIcon,
+//   ChartIcon,
+//   DiscountIcon,
+//   HomeIcon,
+//   InfoIcon,
+//   ProfileIcon,
+//   TrendsIcon,
+//   PageIdentifierIcon,
+//   SunIcon,
+//   MoonIcon,
+//   ArrowRightIcon,
+//   SettingsIcon,
+//   LogOutIcon,
+//   SearchIcon,
+//   CalendarIcon,
+//   NotificationIcon,
+//   CloseIcon,
+//   ChevronDownIcon,
+//   BoxIcon,
+//   RefundIcon,
+//   CartIcon,
+//   CoinIcon,
+//   TrendUpIcon,
+//   TrendDownIcon,
+//   InvoiceIcon,
+// };
