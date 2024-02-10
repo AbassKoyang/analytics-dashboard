@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom"
-import { ArrowRightIcon, ChartIcon, DiscountIcon, HomeIcon, InfoIcon, LogOutIcon, LogoIcon, PageIdentifierIcon, ProfileIcon, SettingsIcon, TrendsIcon } from "../../src/assets/icons"
+import { ArrowRightIcon, ChartIcon, DiscountIcon, HomeIcon, InfoIcon, LogOutIcon, LogoIcon, PageIdentifierIcon, ProfileIcon, SettingsIcon, TrendsIcon } from "../assets/icons"
 import DarkModeToggleButton from "./DarkModeToggleButton";
 import { useState } from "react";
 import { toast } from "react-toastify";

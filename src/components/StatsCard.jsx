@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { DiscountIcon } from "../../src/assets/icons"
+
 
 const StatsCard = ({icon, graph, heading, value, percentage, trendIcon, text, textColor, backGroundColor}) => {
     const [isLoading, setIsLoading] = useState(true);

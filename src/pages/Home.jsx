@@ -3,7 +3,7 @@ import Graph from '../assets/totalrefundgraph.png'
 import totalOrderGraph from  '../assets/totalordergraph.png'
 import totalIncomeGraph from  '../assets/totalincomegraph.png'
 import averageSalesGraph from  '../assets/averagesalesgraph.png'
-import { BoxIcon, CartIcon, CoinIcon, RefundIcon, TrendDownIcon, TrendUpIcon } from "../../src/assets/Icons";
+import { BoxIcon, CartIcon, CoinIcon, RefundIcon, TrendDownIcon, TrendUpIcon } from "../assets/icons";
 import ChartCard from "../components/ChartCard"
 import OrdersCard from "../components/OrdersCard"
 import TopPlatformCard from "../components/TopPlatformCard"

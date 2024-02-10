@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react"
-import { InvoiceIcon } from "../../src/assets/icons";
+import { InvoiceIcon } from "../assets/icons";
 import html2canvas from "html2canvas";
 import { saveAs } from "file-saver";
 
