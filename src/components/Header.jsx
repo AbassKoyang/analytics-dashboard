@@ -73,6 +73,14 @@ const Header = () => {
   }
   
   return (
+    <>
+    <div className={`${isLogOutPopUp ? 'flex' : 'hidden'} w-full max-w-[80%] sm:max-w-[350px] flex-col items-center fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] p-4 rounded-xl bg-white dark:bg-black drop-shadow-md z-30 dark:border dark:border-white/35`} onClick={(event) => (event.stopPropagation())}>
+        <h1 className="text-lg font-medium text-black dark:text-white max-w-[250px] text-center">Are you sure you want to log out?</h1>
+        <div className="w-full flex items-center justify-center gap-4 mt-3">
+            <button onClick={handleLogOutButtonClick} className="bg-[#34CAA5] text-sm text-white font-semibold px-3 py-2 rounded-xl disabled:opacity-85" disabled={isLoggingOut}>{isLoggingOut ? 'Logging you out...' : 'Log out'}</button>
+            <button onClick={() => setIsLogOutPopUp(false)} className="bg-gray-200 text-black text-sm font-medium px-3 py-2 rounded-xl disabled:opacity-85">Cancel</button>
+        </div>
+      </div>
     <header className={`w-full flex items-center justify-center py-[18px] xl:py-[20px] p-0 lg:pl-[53.9px] xl:pl-[63px] bg-[#FAFAFA] dark:bg-[#1b1b1b] border-b border-b-[#E5EAEF] dark:border-b-white/35 fixed top-0 left-0 ${!isScrolledUp ? 'visible' : 'invisible'} z-40`}>
       <div className="w-full max-w-[1400px] flex justify-between items-center px-3 small:px-2 md:px-6 2xl:px-0">
         <Link to='/' aria-label="Logo(Link to home)" className="flex gap-2 items-center justify-center">
@@ -129,14 +137,8 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className={`${isLogOutPopUp ? 'flex' : 'hidden'} flex-col items-center fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] p-4 rounded-xl bg-white dark:bg-black drop-shadow-md z-30 dark:border dark:border-white/35`} onClick={(event) => (event.stopPropagation())}>
-        <h1 className="text-lg font-medium text-black dark:text-white max-w-[200px] text-center">Are you sure you want to log out?</h1>
-        <div className="w-full flex items-center justify-center gap-3 mt-3">
-            <button onClick={handleLogOutButtonClick} className="bg-[#34CAA5] text-sm text-white font-semibold px-3 py-2 rounded-xl disabled:opacity-85" disabled={isLoggingOut}>{isLoggingOut ? 'Logging you out...' : 'Log out'}</button>
-            <button onClick={() => setIsLogOutPopUp(false)} className="bg-gray-200 text-black text-sm font-medium px-3 py-2 rounded-xl disabled:opacity-85">Cancel</button>
-        </div>
-      </div>
     </header>
+    </>
   )
 }
 
