@@ -4,36 +4,7 @@ import { useEffect, useState } from "react";
 
 const ChartCard = () => {
     const [selectedPeriod, setSelectedPeriod] = useState('weekly');
-    const [barSize, setBarSize] = useState(30);
-    const [chartWidth, setChartWidth] = useState(700);
-    const [barRadius, setBarRadius] = useState(25)
     const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        const handleResize = () => {
-          if (window.innerWidth <= 500) {
-            setBarSize(25);
-            setChartWidth(450)
-            setBarRadius(15)
-          } else if (window.innerWidth > 1400) {
-            setBarSize(40); // Default bar size for larger screens
-            setChartWidth(800)
-            setBarRadius(20)
-          } else {
-            setBarSize(35)
-            setChartWidth(730)
-            setBarRadius(23)
-          }
-        };
-    
-        window.addEventListener('resize', handleResize);
-    
-        handleResize();
-
-        return () => {
-          window.removeEventListener('resize', handleResize);
-        };
-      }, []);
 
       useEffect(() => {
         setIsLoading(true);
@@ -49,8 +20,8 @@ const ChartCard = () => {
     }
 
   return (
-    <div className="p-4 rounded-xl bg-white dark:bg-black border border-[#EDF2F7] dark:border-white/35 col-span-5 lg:col-span-3 flex flex-col items-center overflow-auto">
-        <div className="w-full flex justify-between items-center  mb-10">
+    <div className="p-4 rounded-xl bg-white dark:bg-black border border-[#EDF2F7] dark:border-white/35 col-span-5 lg:col-span-3 flex flex-col items-center">
+        <div className="w-full flex justify-between items-center mb-10">
             <h3 className="font-bold text-lg text-[#26282C] dark:text-white">Sales Trend</h3>
             <div className="flex gap-3 items-center">
                 <h5 className="font-medium text-sm text-[#3A3F51] dark:text-white/95">Sort by:</h5>
@@ -79,10 +50,10 @@ const ChartCard = () => {
         )}
         {!isLoading && (
             <>
-        <div className="w-full h-full flex flex-col items-center justify-center overflow-x-visible lg:overflow-hidden">
-            {selectedPeriod === 'weekly' && <CustomBarChart data={weeklyData} barsize={barSize} ticks={[0, 500, 1000, 2000, 3000, 4000, 5000]}  selectedPeriod='day' width={chartWidth} radius={barRadius}/>}
-            {selectedPeriod === 'monthly' && <CustomBarChart data={monthlyData} barsize={barSize} ticks={[0, 5000, 10000, 20000, 30000, 40000, 50000]} selectedPeriod='month' width={chartWidth}  radius={barRadius}/>}
-            {selectedPeriod === 'yearly' && <CustomBarChart data={yearlyData} barsize={barSize} ticks={[0, 25000, 50000, 100000, 15000, 200000, 250000]} selectedPeriod='year' width={chartWidth} radius={barRadius} />}
+        <div className="w-full h-full flex flex-col items-center justify-center overflow-auto xl:overflow-hidden">
+            {selectedPeriod === 'weekly' && <CustomBarChart data={weeklyData} ticks={[0, 500, 1000, 2000, 3000, 4000, 5000]}  selectedPeriod='day'/>}
+            {selectedPeriod === 'monthly' && <CustomBarChart data={monthlyData} ticks={[0, 5000, 10000, 20000, 30000, 40000, 50000]} selectedPeriod='month'/>}
+            {selectedPeriod === 'yearly' && <CustomBarChart data={yearlyData} ticks={[0, 25000, 50000, 100000, 15000, 200000, 250000]} selectedPeriod='year' />}
         </div>
         </>
         )}

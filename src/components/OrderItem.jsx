@@ -44,11 +44,11 @@ const OrderItem = ({id,imageUrl, name, date, amount, status, statusColor}) => {
   };
 
   return (
-    <div ref={containerRef} className="w-[600px] lg:w-full flex items-center justify-between py-3 border-t border-y-[#EDF2F6] dark:border-y-white/35">
+    <div ref={containerRef} className="w-[700px] sm:w-full grid grid-cols-6 py-3 border-t border-y-[#EDF2F6] dark:border-y-white/35">
         
         {isPageLoading && (
           <>
-          <div className="flex items-center gap-2 md:gap-3" aria-label="Skeleton loader">
+          <div className="flex items-center gap-2 md:gap-3 col-span-2 self-center" aria-label="Skeleton loader">
             <div className="size-8 rounded-[50%] bg-gray-200 dark:bg-slate-600 animate-pulse" aria-label='Skeleton loader'  />
             <div className="w-20 lg:w-24  h-4 rounded-xl bg-gray-200 dark:bg-slate-600 animate-pulse" aria-label='Skeleton loader'  />
           </div>
@@ -60,15 +60,15 @@ const OrderItem = ({id,imageUrl, name, date, amount, status, statusColor}) => {
         )}
         {!isPageLoading && (
           <>
-          <div className="flex items-center gap-2 md:gap-3">
+          <div className="flex items-center gap-2 md:gap-3 col-span-2 self-center">
             <img src={imageUrl} alt="Orderer's pic" className="size-8" />
-            <p className="text-[#3A3F51] dark:text-white text-sm md:text-[16px]">{name}</p>
+            <p className="text-[#3A3F51] dark:text-white text-sm md:text-[16px] col-span-1 self-center justify-self-center">{name}</p>
           </div>
 
-          <p className="text-[#737373] dark:text-white/85 text-sm md:text-[16px]">{date}</p>
-          <p className="text-[#0D062D] dark:text-white/90 text-sm md:text-[16px]">{amount}</p>
-          <p className={`${statusColor} text-sm md:text-[16px]`}>{status}</p>
-          <button onClick={() => setViewInvoice(!viewInvoice)} aria-haspopup={true} aria-expanded={viewInvoice} aria-label="Click to see invoice." className="text-[#0D062D] dark:text-white/90 flex items-center gap-1 text-sm bg-transparent outline-0 border-0 hover:bg-[#34caa43a] hover:px-2 hover:py-1 rounded-2xl transition-all duration-100 ease-in-out"> <InvoiceIcon className='fill-[#0D062D] dark:fill-white/90' />View</button>
+          <p className="text-[#737373] dark:text-white/85 text-sm md:text-[16px] col-span-1 self-center justify-self-center">{date}</p>
+          <p className="text-[#0D062D] dark:text-white/90 text-sm md:text-[16px] col-span-1 self-center justify-self-center">{amount}</p>
+          <p className={`${statusColor} text-sm md:text-[16px] col-span-1 self-center justify-self-center`}>{status}</p>
+          <button onClick={() => setViewInvoice(!viewInvoice)} aria-haspopup={true} aria-expanded={viewInvoice} aria-label="Click to see invoice." className="text-[#0D062D] dark:text-white/90 flex items-center gap-1 text-sm bg-transparent outline-0 border-0 hover:bg-[#34caa43a] hover:px-2 hover:py-1 rounded-2xl transition-all duration-100 ease-in-out col-span-1 self-center justify-self-center"> <InvoiceIcon className='fill-[#0D062D] dark:fill-white/90' />View</button>
           </>
         )}
 

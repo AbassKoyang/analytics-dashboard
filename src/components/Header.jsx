@@ -62,6 +62,9 @@ const Header = () => {
       setIsLoggingOut(false)
       toast.success('Logged out successfully!', {
         position: 'bottom-right',
+        pauseOnFocusLoss: false,
+        pauseOnHover: false,
+        draggable: true,
       })
       setTimeout(() => {
         window.location.reload();

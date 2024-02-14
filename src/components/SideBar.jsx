@@ -16,6 +16,9 @@ const SideBar = () => {
       setIsLoggingOut(false)
       toast.success('Logged out successfully!', {
         position: 'bottom-right',
+        pauseOnFocusLoss: false,
+        pauseOnHover: false,
+        draggable: true,
       })
       setTimeout(() => {
         window.location.reload();
@@ -24,7 +27,7 @@ const SideBar = () => {
   }
 
   return (
-    <aside className="hidden lg:flex fixed top-0 left-0 py-5 flex-col items-center justify-between bg-[#F7F8FA] dark:bg-[#1b1b1b] border-r border-r-[#EBECF2] dark:border-r-white/35 h-full z-50">
+    <aside className="hidden lg:flex fixed top-0 left-0 py-5 pt-8 flex-col items-center justify-between bg-[#F7F8FA] dark:bg-[#1b1b1b] border-r border-r-[#EBECF2] dark:border-r-white/35 h-full z-50">
       <div className="flex flex-col gap-4 2xl:gap-8 items-center">
       <Link to='/' aria-label="Logo(Link to home)" className="flex items-center justify-center">
         <LogoIcon className={'fill-[#34CAA5] dark:fill-[#34CAA5]'} />
