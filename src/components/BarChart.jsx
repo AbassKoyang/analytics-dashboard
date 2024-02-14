@@ -26,9 +26,13 @@ const CustomBarChart = ({data, ticks, selectedPeriod}) => {
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth; 
-      if (width <= 500) {
+      if (width <= 500 && width > 400) {
         setBarSize(25);
         setChartWidth(400);
+        setBarRadius(15);
+      } else if(width < 400) {
+        setBarSize(25);
+        setChartWidth(350);
         setBarRadius(15);
       } else if (width > 1600) {
         setBarSize(40);
